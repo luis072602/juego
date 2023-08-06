@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://fuenteprueba.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Logo_Gaming_mando_Moderno_Blanco_y_negro-removebg-preview.png" type="Texture" id=2]
+[ext_resource path="res://logo_moon.png" type="Texture" id=3]
+[ext_resource path="res://scriptmenu.gd" type="Script" id=4]
+[ext_resource path="res://Control.tres" type="DynamicFont" id=5]
+[ext_resource path="res://nino_sprite_caminar_con_linterna_1.png" type="Texture" id=6]
+[ext_resource path="res://001.png" type="Texture" id=7]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="VBoxNombreJuego" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -250.0
+margin_right = 250.0
+margin_bottom = 147.0
+alignment = 1
+
+[node name="logo" type="TextureRect" parent="VBoxNombreJuego"]
+margin_right = 500.0
+margin_bottom = 147.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="VBoxlogo" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -723.0
+margin_right = -1043.0
+margin_bottom = -502.0
+alignment = 1
+
+[node name="logo del juego" type="TextureRect" parent="VBoxlogo"]
+margin_right = 237.0
+margin_bottom = 221.0
+texture = ExtResource( 3 )
+
+[node name="VBoxBotones" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -45.0
+margin_right = 161.0
+margin_bottom = 155.0
+custom_constants/separation = 10
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Jugar" type="Button" parent="VBoxBotones"]
+margin_right = 321.0
+margin_bottom = 95.0
+custom_colors/font_color = Color( 0.552941, 0.552941, 0.552941, 1 )
+custom_colors/font_color_hover = Color( 0.411765, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Jugar"
+flat = true
+
+[node name="Salir" type="Button" parent="VBoxBotones"]
+margin_top = 105.0
+margin_right = 321.0
+margin_bottom = 200.0
+custom_colors/font_color = Color( 0.552941, 0.552941, 0.552941, 1 )
+custom_colors/font_color_hover = Color( 0.411765, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Salir"
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 40.0
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_right = 424.0
+margin_bottom = 81.0
+custom_colors/font_color = Color( 0.792157, 0.792157, 0.792157, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Diseñado por: Moon Entertainment
+"
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+margin_left = 428.0
+margin_right = 428.0
+margin_bottom = 81.0
+
+[node name="NinoSpriteCaminarConLinterna1" type="Sprite" parent="."]
+position = Vector2( 1204, 615 )
+scale = Vector2( 1.5274, 1.22596 )
+texture = ExtResource( 6 )
+
+[node name="001" type="Sprite" parent="."]
+position = Vector2( 675, 656 )
+scale = Vector2( 1.97273, 1.91 )
+texture = ExtResource( 7 )
+
+[connection signal="pressed" from="VBoxBotones/Jugar" to="." method="_on_Jugar_pressed"]
+[connection signal="pressed" from="VBoxBotones/Salir" to="." method="_on_Salir_pressed"]
